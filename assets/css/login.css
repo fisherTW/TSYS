@@ -1,0 +1,96 @@
+body {
+
+   /* Location of the image */
+  background-image: url(../img/bigbg.jpg);
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+   background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.form-signin img{
+margin:0 25% 0 25%;
+}
+
+.heading{
+  font-family: "Book Antiqua",Palatino,"Palatino Linotype","Palatino LT STD",Georgia,serif;
+  color: #FFFFFF;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 400
+}
+.heading-desc{
+  font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif;
+	font-size:18px;
+  color: #FFFFFF;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-radius: 0;
+
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-radius: 0;
+}
+.help
+{
+    margin-top: 10px;
+}
+.account-creation
+{
+    display: block;
+    margin-top: 10px;
+}
+.fiximg {
+  width:100px;
+  float:right;
+  position:fixed;
+  right:0px;
+  bottom:0px;
+  z-index:20;
+}
