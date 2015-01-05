@@ -1,6 +1,6 @@
 TSYS
 ==============
-TSYS is a web-based practice system for learning CI & Bootstrap.
+TSYS is a web-based practice project for learning CI & Bootstrap.
 
 Requirements
 --------------
