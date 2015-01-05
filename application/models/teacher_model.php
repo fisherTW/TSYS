@@ -1,4 +1,13 @@
 <?php
+/*
+* File:			teacher_model.php
+* Version:		-
+* Last changed:	2014/12/29
+* Purpose:		-
+* Author:		Fisher Liao / fisher.liao@gmail.com
+* Copyright:	(C) 2014
+* Product:		TSYS
+*/
 class Teacher_model extends CI_Model {
 	public function __construct() {
 		$this->load->database();

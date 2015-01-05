@@ -54,8 +54,13 @@ $route['teacher/(:any)'] = 'teacher/edit/$1';
 
 
 $route['teacher'] = 'teacher';
+
 $route['api/(:any)'] = 'api/$1';
 $route['api'] = 'api';
+
+$route['langswitch/(:any)'] = 'langswitch/$1';
+
+
 $route['(:any)'] = 'pages/edit/$1';
 
 

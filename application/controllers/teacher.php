@@ -1,8 +1,19 @@
 <?php
+/*
+* File:			teacher.php
+* Version:		-
+* Last changed:	2014/12/29
+* Purpose:		-
+* Author:		Fisher Liao / fisher.liao@gmail.com
+* Copyright:	(C) 2014
+* Product:		TSYS
+*/
 class Teacher extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
+		//$this->lang->load("message","english");
 		$this->load->helper('url');
+		$this->load->helper('language');
 		$this->load->model('teacher_model');
 
 		$this->load->model('country_model');
@@ -12,6 +23,9 @@ class Teacher extends CI_Controller {
 	public function index() {
 		$data['title'] = 'Teacher Data';
 		$data['ary_cou'] = $this->ary_cou;
+
+		$data['lang'] = $this->lang;
+		$data['site_lang'] = $this->session->userdata('site_lang');
 		
 		$this->load->view('templates/header',$data);
 		$this->load->view('teacher/index',$data);
@@ -36,6 +50,9 @@ class Teacher extends CI_Controller {
 		$data['text'] = $data['teacher']['text'];
 		$data['ary_cou'] = $this->ary_cou;
 
+		$data['lang'] = $this->lang;
+		$data['site_lang'] = $this->session->userdata('site_lang');
+
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		
@@ -51,6 +68,9 @@ class Teacher extends CI_Controller {
 		$this->load->helper('form');
 		$data['title'] = 'Create a new item';
 		$data['ary_cou'] = $this->ary_cou;
+
+		$data['lang'] = $this->lang;
+		$data['site_lang'] = $this->session->userdata('site_lang');
 		
 		$this->load->view('templates/header',$data);
 		$this->load->view('teacher/create');

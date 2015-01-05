@@ -10,7 +10,22 @@
 |
 */
 
+/*
+pre_system
+pre_controller
+post_controller_constructor
+post_controller
+display_override
+cache_override
+post_system
+*/
 
+$hook['post_controller_constructor'] = array(
+    'class' => 'LanguageLoader',
+    'function' => 'initialize',
+    'filename' => 'LanguageLoader.php',
+    'filepath' => 'hooks'
+);
 
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */

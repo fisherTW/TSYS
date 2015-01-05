@@ -1,6 +1,4 @@
 <div class='container-fluid'>
-
-
 	<div class='row'>
 		<div class='col-md-8 col-lg-9'>
 			<div class='row text-right'>
@@ -15,10 +13,10 @@
 					<tr>
 						<th data-halign="center" data-align="left" data-sortable="true" data-formatter="noFormatter" data-width="5">#</th>
 						<th data-field='id' data-halign="center" data-align="left" data-sortable="true" data-width="5">UID</th>
-						<th data-field='country' data-halign="center" data-align="center" data-formatter="countryFormatter" data-width="5">Nation</th>
-						<th data-field='title' data-halign="center" data-align="left" data-sortable="true">Name</th>
-						<th data-field='text' data-halign="center" data-align="left" data-formatter="textFormatter">Text</th>
-						<th data-halign="center" data-align="center" data-formatter="operateFormatter" data-events="operateEvents" data-width="5">Operation</th>
+						<th data-field='country' data-halign="center" data-align="center" data-formatter="countryFormatter" data-width="5"><?= $lang->line('msg_nation') ?></th>
+						<th data-field='title' data-halign="center" data-align="left" data-sortable="true"><?= $lang->line('msg_name') ?></th>
+						<th data-field='text' data-halign="center" data-align="left" data-formatter="textFormatter"><?= $lang->line('msg_text') ?></th>
+						<th data-halign="center" data-align="center" data-formatter="operateFormatter" data-events="operateEvents" data-width="5"><?= $lang->line('msg_operation') ?></th>
 					</tr>
 				</thead>
 				<tbody>

@@ -1,4 +1,13 @@
 <?php
+/*
+* File:			api.php
+* Version:		-
+* Last changed:	2014/12/29
+* Purpose:		provide api
+* Author:		Fisher Liao / fisher.liao@gmail.com
+* Copyright:	(C) 2014
+* Product:		TSYS
+*/
 require(APPPATH.'/libraries/REST_Controller.php');
 
 class Api extends REST_Controller {
