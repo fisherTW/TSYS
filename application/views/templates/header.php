@@ -70,8 +70,8 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class='glyphicon glyphicon-globe'></span> Language <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href='<?=base_url(); ?>langswitch/switchLanguage/tw' <?php if($site_lang == 'tw'):?>class="list-group-item active"<?php endif;?>>正體中文</a></li>
-						<li><a href='<?=base_url(); ?>langswitch/switchLanguage/en' <?php if($site_lang == 'en'):?>class="list-group-item active"<?php endif;?>>English</a></li>
+						<li><a href='<?=base_url(); ?>langswitch/switchLanguage/tw'><?php if($site_lang == 'tw'):?><span class="glyphicon glyphicon-ok"></span><?php endif;?> 正體中文</a></li>
+						<li><a href='<?=base_url(); ?>langswitch/switchLanguage/en'><?php if($site_lang == 'en'):?><span class="glyphicon glyphicon-ok"></span><?php endif;?> English</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
