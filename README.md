@@ -9,7 +9,7 @@ Requirements
 
 Framwork
 --------------
-- CodeIgnitor	
+- CodeIgniter	
 
 Library
 --------------
