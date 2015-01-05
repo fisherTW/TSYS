@@ -17,7 +17,6 @@ Library
 - Bootstrap
 - Bootstraptable
 - Bootstrap-select
-- 
 
 Screenshot
 --------------
