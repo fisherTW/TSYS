@@ -55,8 +55,14 @@ p {
 </head>
 <body>
 	<div id="container">
+<?php if ($status_code == 401): ?>
+		<h1>Sorry, you do not have permission for this page.</h1>
+		<p><a href="<?php echo base_url(); ?>teacher/t_dologout">Login</a></p>
+<?php elseif ($status_code == 402): ?>
+<?php else: ?>
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
+<?php endif; ?>
 	</div>
 </body>
 </html>

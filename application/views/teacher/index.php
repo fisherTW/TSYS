@@ -1,96 +1,120 @@
+<div id="drawerExample" class="drawer dw-xs-10 dw-sm-9 dw-md-8 fold" aria-labelledby="drawerExample">
+	<div class="drawer-controls">
+		<a href="#drawerExample" data-toggle="drawer" href="#drawerExample" aria-foldedopen="false" aria-controls="drawerExample" class="btn btn-default"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> <span class="badge">8</span></a>
+	</div>
+	<div class="drawer-contents">
+		<div class="drawer-heading">
+			<h2 class="drawer-title text-center"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></h2>
+		</div>
+		<div class="drawer-body">
+
+			<div class="row">
+<?php for($i=1; $i <= 12; $i++): ?>
+				<div class='col-md-3'>
+					<div class="card small">
+						<div class="card-image">
+							<img src="<?php echo base_url(); ?>assets/img/girl1.jpg">
+							<span class="card-title">Card Title</span>
+						</div>
+						<div class="card-content">
+
+						</div>
+					</div>
+				</div>
+<?php endfor; ?>
+			</div>
+
+		</div>
+	</div>
+</div>
+
 <div class='container-fluid'>
 	<div class='row'>
 		<div class='col-md-8 col-lg-9'>
-			<div class='row text-right'>
-				<div class='col-md-8'>
-				</div>
-				<div class='col-md-4'>
-					<button type='button' class='btn btn-warning hero-unit' onclick="window.location = window.location.pathname + '/create';"><span class='glyphicon glyphicon-plus'></span> Create</button>
-				</div>
-			</div>
-			<table id='tbl_main' data-toggle="table" data-url='api/teachers' data-sort-name="id" data-sort-order="asc" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-row-style="rowStyle" data-side-pagination="client" data-pagination="true" data-page-list="[10, 50, 100]">
-				<thead>
-					<tr>
-						<th data-halign="center" data-align="left" data-sortable="true" data-formatter="noFormatter" data-width="5">#</th>
-						<th data-field='id' data-halign="center" data-align="left" data-sortable="true" data-width="5">UID</th>
-						<th data-field='country' data-halign="center" data-align="center" data-formatter="countryFormatter" data-width="5"><?= $lang->line('msg_nation') ?></th>
-						<th data-field='title' data-halign="center" data-align="left" data-sortable="true"><?= $lang->line('msg_name') ?></th>
-						<th data-field='text' data-halign="center" data-align="left" data-formatter="textFormatter"><?= $lang->line('msg_text') ?></th>
-						<th data-halign="center" data-align="center" data-formatter="operateFormatter" data-events="operateEvents" data-width="5"><?= $lang->line('msg_operation') ?></th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
+			<table id='tbl_main'>
 			</table>
 		</div>
 		<div class='col-md-4  col-lg-3'>
 			<div class='row'>
 				<div class='col-md-12'>
-					<button type='button' class='btn btn-primary form-control mb10' onclick=""><span class='glyphicon glyphicon-trash'></span> Clear All Filters</button>
+					<button type='button' id='btn_clear' class='btn btn-primary form-control mb10'><span class='glyphicon glyphicon-trash'></span> <?= $lang->line('ClearAllFilters') ?></button>
 				</div>
 
 			<div class="form-group">
-				<label class="col-sm-12 control-label">Employed Status</label>
+				<label class="col-sm-12 control-label"> <?= $lang->line('msg_sex') ?></label>
 				<div class="col-sm-12">
-					<select class="form-control">
-						<option>Probationary</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-					</select>
+					<?=form_dropdown('sex', $ary_sex, '', " class='form-control' role='criteria'"); ?>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-12 control-label">聯絡窗口</label>
+				<label class="col-sm-12 control-label"> <?= $lang->line('msg_visa') ?></label>
 				<div class="col-sm-12">
-					<select class="form-control">
-						<option>Beatrice</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-					</select>
+					<?=form_dropdown('visa', $ary_visa, '', " class='form-control' role='criteria'"); ?>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-12 control-label">Nation</label>
+				<label class="col-sm-12 control-label"> <?= $lang->line('msg_position_seeking') ?></label>
 				<div class="col-sm-12">
-					<select class="form-control">
-						<option>Japan</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-					</select>
+					<?=form_dropdown('pos_seeking', $pos_seeking, '', " class='form-control' role='criteria'"); ?>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-12 control-label">語言</label>
+				<label class="col-sm-12 control-label"> <?= $lang->line('msg_teaching_preference') ?></label>
 				<div class="col-sm-12">
-					<select class="form-control">
-						<option>日文</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-					</select>
+					<?=form_dropdown('teaching_preference', $teaching_preference, '', " class='form-control' role='criteria'"); ?>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-12 control-label">學位</label>
+				<label class="col-sm-12 control-label"> <?= $lang->line('msg_recruiter') ?></label>
+				<div class="col-sm-12">
+					<?=form_dropdown('recruiter', $ary_e, '', " class='form-control' role='criteria'"); ?>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-12 control-label"> <?= $lang->line('msg_contact_window') ?></label>
+				<div class="col-sm-12">
+					<?=form_dropdown('contact', $ary_e, '', " class='form-control' role='criteria'"); ?>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-12 control-label"> <?= $lang->line('msg_nationality') ?></label>
+				<div class="col-sm-12">
+					<?=form_dropdown('nation', $ary_cou, '', " class='form-control' role='criteria'"); ?>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-12 control-label"> <?= $lang->line('msg_current_location') ?></label>
+				<div class="col-sm-12">
+					<?=form_dropdown('current_location', $ary_cou, '', " class='form-control' role='criteria'"); ?>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-12 control-label"> <?= $lang->line('msg_current_employment_status') ?></label>
+				<div class="col-sm-12">
+					<?=form_dropdown('current_employment_status', $ary_current_employment_status, '', " class='form-control' role='criteria'"); ?>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-12 control-label"><?= $lang->line('TargetTeachingLanguage') ?></label>
+				<div class="col-sm-12">
+					<?=form_dropdown('lang', $ary_lang, '', " class='form-control' role='criteria'"); ?>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-12 control-label"> <?= $lang->line('msg_educational_degree') ?></label>
 				<div class="col-sm-12 mb10">
-					<select class="form-control">
-						<option>學士</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-					</select>
+					
+					<?=form_dropdown('degree', $ary_degree, '', " class='form-control' role='criteria'"); ?>
 				</div>
 			</div>
 
@@ -98,6 +122,69 @@
 
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	<form class='form'>
+
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<h4 class="panel-title">
+			<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+			<span class='glyphicon glyphicon-filter'></span><?= $lang->line('msg_personality') ?></a></h4>
+		</div>
+		<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+			<div class="panel-body">
+<?php for($i=1; $i <= count($ary_personality); $i++): ?>
+				<div class="checkbox">
+					<label>
+					<input type="checkbox" value="<?=$i?>" name='cbx_personality[]' role='criteria'>
+					<?=$ary_personality[$i]?>
+					</label>
+				</div>
+<?php endfor; ?>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<h4 class="panel-title">
+			<a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
+			<span class='glyphicon glyphicon-filter'></span><?= $lang->line('msg_interest') ?></a></h4>
+		</div>
+		<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+			<div class="panel-body">
+<?php for($i=1; $i <= count($ary_interest); $i++): ?>
+				<div class="checkbox">
+					<label>
+					<input type="checkbox" value="<?=$i?>" name='cbx_interest[]' role='criteria'>
+					<?=$ary_interest[$i]?>
+					</label>
+				</div>
+<?php endfor; ?>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<h4 class="panel-title">
+			<a data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
+			<span class='glyphicon glyphicon-filter'></span><?= $lang->line('msg_good') ?></a></h4>
+		</div>
+		<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+			<div class="panel-body">
+<?php for($i=1; $i <= count($ary_good); $i++): ?>
+				<div class="checkbox">
+					<label>
+					<input type="checkbox" value="<?=$i?>" name='cbx_good[]' role='criteria'>
+					<?=$ary_good[$i]?>
+					</label>
+				</div>
+<?php endfor; ?>
+			</div>
+		</div>
+	</div>
+
+	</form>
+
+<!-- 
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
@@ -153,34 +240,8 @@
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
-      <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          <span class='glyphicon glyphicon-filter'></span> Filter by 師資狀態
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="panel-body">
-Tim 很帥
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
-      <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          <span class='glyphicon glyphicon-filter'></span> Filter by Attribute
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">
-Fisher 也是
-      </div>
-    </div>
-  </div>
+ -->
+
 </div>
 
 
@@ -198,3 +259,119 @@ Fisher 也是
 
 <input type='hidden' id='hid_baseurl' value='<?=base_url(); ?>'>
 <script src="<?php echo base_url(); ?>assets/js/teacher_index.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/drawer.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('#tbl_main').bootstrapTable({
+		toggle:"table",
+		idField: 'id',
+		url:'api/teachers',
+		sortName:"id",
+		sortOrder:"desc",
+		showRefresh:"true",
+		showToggle:"true",
+		showColumns:"true",
+		search:"true",
+		clickToSelect: true,
+		selectItemName:"toolbar1",
+		rowStyle:"rowStyle",
+		toolbar: "#custom-toolbar",
+		sidePagination:"client",
+		pagination:"true",
+		pageSize: 50,
+		pageList:"[10, 50, 100]",
+		queryParams: function(p) {
+			return {
+				sex: $("select[name=sex]").val(),
+				visa: $("select[name=visa]").val(),
+				pos_seeking: $("select[name=pos_seeking]").val(),
+				teaching_preference: $("select[name=teaching_preference]").val(),
+				recruiter: $("select[name=recruiter]").val(),
+				contact: $("select[name=contact]").val(),
+				nation: $("select[name=nation]").val(),
+				current_location: $("select[name=current_location]").val(),
+				current_employment_status: $("select[name=current_employment_status]").val(),
+				lang: $("select[name=lang]").val(),
+				degree: $("select[name=degree]").val(),
+				good: $("input[name='cbx_good[]']:checked")
+					.map(function() { return $(this).val() })
+					.get()
+					.join(","),
+				interest: $("input[name='cbx_interest[]']:checked")
+					.map(function() { return $(this).val() })
+					.get()
+					.join(","),
+				personality: $("input[name='cbx_personality[]']:checked")
+					.map(function() { return $(this).val() })
+					.get()
+					.join(",")
+			};
+		},
+		columns: [{
+			checkbox: true
+		},{
+			field:'id' ,
+			title:'<?= $lang->line('t_id') ?>',
+			halign:"center" ,
+			align:"left" ,
+			sortable:"true" ,
+			width:"5",
+			class:"text-nowrap"
+		},{
+			field:'sex' ,
+			title: '<?= $lang->line('msg_sex') ?>',
+			halign:"center" ,
+			align:"left" ,
+			sortable:"true" ,
+			formatter: sexFormatter,
+			width:"5",
+			class:"text-nowrap"
+		},{
+			field:'nation' ,
+			title: '<?= $lang->line('msg_nation') ?>',
+			halign:"center" ,
+			align:"center" ,
+			sortable:"true" ,
+			formatter: countryFormatter,
+			width:"5",
+			class:"text-nowrap"
+		},{
+			field:'name_full' ,
+			title: '<?= $lang->line('msg_full_name') ?>',
+			halign:"center" ,
+			align:"left" ,
+			sortable:"true" ,
+			class:"text-nowrap"
+		},{
+			field:'is_enable' ,
+			title: '<?= $lang->line('msg_enabled') ?>',
+			halign:"center" ,
+			align:"center" ,
+			sortable:"true" ,
+			width:"5",
+			formatter: boolFormatter,
+			class:"text-nowrap"
+		},{
+			field:'is_blacklist' ,
+			title: '<?= $lang->line('msg_blacklist') ?>',
+			halign:"center" ,
+			align:"center" ,
+			sortable:"true" ,
+			width:"5",
+			formatter: boolFormatter,
+			class:"text-nowrap"
+		},{
+			field:'' ,
+			title: '<?= $lang->line('msg_operation') ?>',
+			halign:"center" ,
+			align:"center",
+			events: operateEvents,
+			formatter: operateFormatter,
+			width:"10",
+			class:"text-nowrap"
+		}]
+	}).on('all.bs.table', function (e, data) {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+})
+</script>

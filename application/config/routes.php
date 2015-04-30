@@ -39,26 +39,34 @@
 */
 
 // default route
-$route['default_controller'] = 'pages/view';
+$route['default_controller'] = 'login';
 $route['404_override'] = '';
 // default route END
 
-$route['teacher/create'] = 'teacher/create';
-$route['teacher/delete'] = 'teacher/delete';
-$route['teacher/login'] = 'teacher/login';
-$route['teacher/list'] = 'teacher';
+$route['login/(:any)']			= 'login/$1';
+$route['login']					= 'login';
+$route['teacher/create']		= 'teacher/create';
+$route['teacher/delete']		= 'teacher/delete';
+$route['teacher/reg/(:any)']	= 'teacher/reg/$1';
+$route['teacher/app']			= 'teacher/app';
+$route['teacher/list']			= 'teacher';
+$route['teacher/test']			= 'teacher/test';
+$route['teacher/t_dologin']		= 'teacher/t_dologin';
+$route['teacher/t_dologout']	= 'teacher/t_dologout';
 
-// ci: $route['news/view/(:any)'] = 'news/view/$1';
-// is bug??
-$route['teacher/(:any)'] = 'teacher/edit/$1';
+$route['teacher/(:any)']		= 'teacher/create/$1';
 
+$route['teacher']				= 'teacher';
 
-$route['teacher'] = 'teacher';
+$route['api/(:any)']			= 'api/$1';
+$route['api']					= 'api';
+$route['upload/(:any)']			= 'upload/$1';
 
-$route['api/(:any)'] = 'api/$1';
-$route['api'] = 'api';
+$route['langswitch/(:any)']		= 'langswitch/$1';
 
-$route['langswitch/(:any)'] = 'langswitch/$1';
+//////////////////////////////////////////////
+$route['debug']					= 'debug';
+//////////////////////////////////////////////
 
 
 $route['(:any)'] = 'pages/edit/$1';

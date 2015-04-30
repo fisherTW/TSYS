@@ -1,19 +1,3 @@
-var MAX_TEXT_LENGTH = 10;
-
-/*
-$('#tbl_main').bootstrapTable({
-	method: 'GET',
-    url: 'api/teachers'
-});
-*/
-
-$(function () {
-
-$('#tbl_main').bootstrapTable({}).on('all.bs.table', function (e, data) {
-	$('[data-toggle="tooltip"]').tooltip();
-});
-})
-
 function rowStyle(row, index) {
 	//var classes = ['active', 'success', 'info', 'warning', 'danger'];
 	var classes = ['success'];
@@ -32,9 +16,9 @@ function noFormatter(value, row, index) {
 	return index + 1;
 }
 
-function textFormatter(value, row) {
-	var ret = ((value.length > MAX_TEXT_LENGTH) ? (value.substring(0,MAX_TEXT_LENGTH) + '...') : value);
-	return ret;
+function sexFormatter(value, row) {
+	
+	return (value == 0 ? 'F' : 'M');
 }
 
 function countryFormatter(value, row) {
@@ -48,6 +32,7 @@ function countryFormatter(value, row) {
 
 
 function operateFormatter(value, row, index) {
+	/*
     return [
         '<a class="edit ml10" href="javascript:void(0)" title="Edit">',
             '<i class="glyphicon glyphicon-edit"></i>',
@@ -56,7 +41,31 @@ function operateFormatter(value, row, index) {
             '<i class="glyphicon glyphicon-remove"></i>',
         '</a>'
     ].join('');
+    */
+    return [
+        '<a class="edit ml10" href="javascript:void(0)" title="Edit">',
+            '<i class="glyphicon glyphicon-edit"></i>',
+        '</a>'
+    ].join('');
 }
+
+function boolFormatter(value) {
+	if(value === null) { return null; }
+	if(value == 1) { return "<span class='glyphicon glyphicon-ok'></span>";}
+}
+
+$("select[role=criteria]").change(function() {
+	$('#tbl_main').bootstrapTable('refresh');
+});
+$("input[role=criteria]").change(function() {
+	$('#tbl_main').bootstrapTable('refresh');
+});
+
+$('#btn_clear').click(function() {
+	$("select[role=criteria]").val(0);
+	$("input[role=criteria]").prop('checked',false);
+	$('#tbl_main').bootstrapTable('refresh');
+});
 
 window.operateEvents = {
     'click .edit': function (e, value, row, index) {

@@ -36,12 +36,12 @@ class Api extends REST_Controller {
 			$this->response(NULL, 400);
 		}
 
-		$res = $this->teacher_model->set_teacher();
+		$res = $this->teacher_model->set_teacher($this, $this->request->method);
 
 		if($res !== FALSE) {
 			$this->response(NULL, 200);
 		} else {
-			$this->response(NULL, 404);	
+			$this->response(NULL, 500);	
 		}
 	}
 
@@ -50,19 +50,12 @@ class Api extends REST_Controller {
 			$this->response(NULL, 400);
 		}
 
-
-		$data = array(
-			'title' => $this->put('title'),
-			'text' => $this->put('text'),
-			'country' => $this->put('country')
-		);
-
-		$result = $this->teacher_model->edit_teacher( $this->put('id'), $data);
+		$res = $this->teacher_model->set_teacher($this, $this->request->method);
 
 		if($res !== FALSE) {
 			$this->response(NULL, 200);
 		} else {
-			$this->response(NULL, 404);	
+			$this->response(NULL, 500);	
 		}
 	}
 
@@ -81,13 +74,13 @@ class Api extends REST_Controller {
 	}
 
 	function teachers_get() {
-		$data = $this->teacher_model->get_teacher();
+		$data = $this->teacher_model->get_teacher(false,$this, $this->request->method);
 
-		if($data) {
+		//if($data) {
 			$this->response($data, 200);
-		} else {
-			$this->response(NULL, 404);
-		}
+		//} else {
+		//	$this->response(NULL, 404);
+		//}
 	}
 }
 ?>

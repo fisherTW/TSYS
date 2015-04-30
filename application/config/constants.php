@@ -36,6 +36,17 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+// TSYS role
+						
+define('ROLE_RECRUITMENT',		1);
+define('ROLE_TRAINING',			2);
+define('ROLE_MANAGEMENT',		4);
+define('ROLE_CONSULTANT',		8);
+define('ROLE_ADMINISTRATOR',	16);
+define('ROLE_TEACHER',			32);
+define('ROLE_SCHOOL',			64);
+
+define('URL_API_ERP',			'http://erp.dewey.com.tw/api/tsys.php');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

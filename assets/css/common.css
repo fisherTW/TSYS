@@ -1,0 +1,11 @@
+.form input:invalid, .form textarea:invalid {
+	background: #fff url(../img/invalid.png) no-repeat 98% center;
+	box-shadow: 0 0 5px #d45252;
+	border-color: #b03535
+}
+
+.form input:required:valid, #form1 textarea:required:valid {
+	background: #fff url(../img/valid.png) no-repeat 98% center;
+	box-shadow: 0 0 5px #5cd053;
+	border-color: #28921f;
+}
